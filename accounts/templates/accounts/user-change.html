@@ -1,0 +1,38 @@
+{% extends 'base/_dashboard_base.html' %}
+{% block title %}Alterar Usuário{% endblock %}
+{% block body_title %}Alterar Usuário{% endblock %}
+{% block main_content %}
+{% load widget_tweaks %}
+<div class="text-center">
+    <div class="form-signin"> 
+        <h4 class="mb-3">Ver/Alterar Usuário</h4>
+        <form method="post" class="form" autocomplete="off">
+            {% csrf_token %}
+            <div class="form-group mt-3">
+                <label for="username">Email</label>
+                {% render_field form.username class="form-control form-control" id="username" name="username" %}
+            </div> 
+            <div class="form-group mt-3">
+                <label for="department">departamento</label>
+                {% render_field form.department class="form-control form-control" id="department" name="department" %}  
+            </div> 
+            <div class="form-group mt-3">
+                <label for="username">Nome</label>
+                {% render_field form.first_name class="form-control form-control" id="first_name" name="first_name" %}      
+            </div> 
+            <div class="form-group mt-3">
+                <label for="username">Sobrenome</label>
+                {% render_field form.last_name class="form-control form-control" id="last_name" name="last_name" %} 
+            </div> 
+            <div class="form-group mt-3">
+                <label for="username"><code>Usuário ís_active ?</code></label>
+                {% render_field form.is_active class="form-check-input" id="is_active" name="is_active" %}    
+            </div> 
+            <div class="form-group mt-3">
+                <button type="submit" class="button_min" name="btn_cadastro_canal">Alterar</button>
+                <a class="btn button_min" role="button" href="{% url 'users' %}">Cancelar</a>
+            </div> 
+        </form> 
+    </div>
+</div>
+{% endblock %}

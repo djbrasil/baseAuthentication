@@ -1,0 +1,72 @@
+{% extends 'base/_base_index.html' %}
+{% load static %}
+{% block title %}Novo Usuário{% endblock %}
+{% block body_content %}
+<div class="text-center">
+    <main class="form-signup">
+        <img class="img-fluid" src="{% static 'base/images/download.gif' %}" alt="logo" width="250" height="250">
+        <h1 class="h3 mb-3 fw-normal">Entrar</h1>
+        <form method="post" class="form" action="{% url 'user-new' %}" autocomplete="off">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group mt-3">
+                        <label for="username">Email<span style="color: red;">*</span></label>
+                        <input type="email" class="form-control item" id="username" name="username" required autofocus>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group mt-3">
+                        <label for="department">Departamento<span style="color: red;">*</span></label>
+                        <select class="form-control item" id="department" name="department" required>
+                            {% for dp in form.department %}
+                            {{ dp }}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group mt-3">
+                        <label for="first_name">Nome<span style="color: red;">*</span></label>
+                        <input type="text" class="form-control item" id="first_name" name="first_name" required>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group mt-3">
+                        <label for="last_name">Sobrenome<span style="color: red;">*</span></label>
+                        <input type="text" class="form-control item" id="last_name" name="last_name" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group mt-3">
+                        <label for="password1">Senha<span style="color: red;">*</span></label>
+                        <input type="password" class="form-control item" id="password1" name="password1" required>
+                        <small id="password-help" class="form-text text-muted">
+                            Sua senha deve conter pelo menos 8 caracteres.
+                        </small>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group mt-3">
+                        <label for="password2">Confirmação da Senha<span style="color: red;">*</span></label>
+                        <input type="password" class="form-control item" id="password2" name="password2" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <button type="submit" class="button_min" name="btn_cadastro_canal">Salvar</button>
+                <a class="btn button_min" role="button" href="{% url 'index' %}">Cancelar</a>
+                <div id="msgSubmit" class="h3 text-center hidden"></div>
+            </div>
+            <div class="form-group py-3">
+                <a class="link-secondary" href="{% url 'login' %}">Conectar-se</a>
+            </div>
+        </form>
+        <p class="mt-5 mb-3 text-muted">© XYZ 9999</p>
+    </main>
+</div>
+{% endblock %}

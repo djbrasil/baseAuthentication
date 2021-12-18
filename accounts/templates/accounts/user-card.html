@@ -1,0 +1,15 @@
+{% if not user_list.is_superuser %}
+<tbody>
+    <tr>
+        <th scope="row">{{ user_list.id }}</th>
+        <th scope="row">{{ user_list.first_name }} {{ user_list.last_name }}</th>
+        <th scope="row">{{ user_list.username }}</th>
+        <th scope="row">{{ user_list.get_department_display }}</th>
+        <th scope="row">
+            <a class="button_min" href="{% url 'user-change' user_list.pk %}">Ver</a>
+            <a class="button_min" href="{% url 'user-change' user_list.pk %}">Alterar</a>
+            <a class="button_min" href="{% url 'user-delete' user_list.pk %}"><i class="fas fa-trash"></i></a>
+        </th>
+    </tr>
+</tbody>
+{% endif %}

@@ -1,0 +1,17 @@
+<!-- Card da tela de inicio -->
+<div class="container lead" style="color:aliceblue"> 
+    <div class=" mt-5 py-5">
+        <div class="h2">Lorem Ipsum</div> 
+        <h5>Sistema ainda em desenvolvimento.</h5> 
+        Você pode acessar varios relatórios depois de efetuar o Registro/Login.</p>
+        {% if user.is_authenticated %}
+        <p class="lead card-text">Usuário: <a href="{% url 'index-manager' %}"> {{ user.first_name }}</a> já está
+            logado no sistema</p>
+        <a href="{% url 'logout' %}">Click aqui para Sair</a>
+        {% else %}
+        <a class="button_min" href="{% url 'index-manager' %}">Entrar</a>
+        {% endif %}   
+    </div>
+    <p>Empresa XYZ © 9999<br>https://leticialima.vercel.app</p>  
+</div> 
+<!-- Card da tela de inicio -->

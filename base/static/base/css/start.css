@@ -1,0 +1,40 @@
+.form-signin {  
+    width: 100%;
+    max-width: 450px;
+    padding: 10px;
+    margin: auto;
+    border-radius: 30px; 
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+.form-signup {
+    width: 100%;
+    max-width: 700px;
+    padding: 10px;
+    margin: auto;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgb(0 0 0 / 8%);
+}
+
+a {
+    text-decoration: none!important;
+    color: #6c757d;
+}
+
+.button_min {
+    color: white;
+    background: #840284;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 5px;
+    padding: .50rem;
+    width: 10rem;
+    text-align: center;
+}
+  
+.button_min:hover {
+    color: white;
+    background: #9a009f;
+    text-decoration: none;
+}
